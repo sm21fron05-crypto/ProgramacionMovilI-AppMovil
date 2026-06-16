@@ -46,16 +46,5 @@ public class MainActivity extends AppCompatActivity implements RecyclerAdapter.O
         // Create DetailFragment and pass the selected ItemModel inside a Bundle
         DetailFragment detailFragment = DetailFragment.newInstance(item);
 
-        // Perform Fragment transaction with custom XML animation and add to back stack
-        getSupportFragmentManager().beginTransaction()
-                .setCustomAnimations(
-                        R.anim.fade_in,           // Enter animation
-                        android.R.anim.fade_out,  // Exit animation
-                        android.R.anim.fade_in,   // Pop enter animation (when popping detail back)
-                        android.R.anim.fade_out   // Pop exit animation
-                )
-                .replace(R.id.fragment_container, detailFragment)
-                .addToBackStack(null) // Ensures standard system back-button navigation works
-                .commit();
     }
 }
