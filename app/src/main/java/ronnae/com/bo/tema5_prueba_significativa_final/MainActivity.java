@@ -26,25 +26,31 @@ public class MainActivity extends AppCompatActivity implements RecyclerAdapter.O
             return insets;
         });
 
-        // Initialize RecyclerView
+
         RecyclerView recyclerView = findViewById(R.id.recyclerView);
-        
-        // 2-column grid layout for a premium, card-album appearance
+
         GridLayoutManager gridLayoutManager = new GridLayoutManager(this, 2);
         recyclerView.setLayoutManager(gridLayoutManager);
 
-        // Fetch items from DataHelper
+
         List<ItemModel> items = DataHelper.getMythologicalCreatures();
 
-        // Set custom RecyclerAdapter
+
         RecyclerAdapter adapter = new RecyclerAdapter(items, this);
         recyclerView.setAdapter(adapter);
     }
 
     @Override
     public void onItemClick(ItemModel item) {
-        // Create DetailFragment and pass the selected ItemModel inside a Bundle
+
         DetailFragment detailFragment = DetailFragment.newInstance(item);
 
+        androidx.fragment.app.FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+
+        transaction.replace(R.id.main, detailFragment);
+
+        transaction.addToBackStack(null);
+
+        transaction.commit();
     }
 }
