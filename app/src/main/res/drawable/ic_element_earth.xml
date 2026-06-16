@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="120dp"
+    android:height="120dp"
+    android:viewportWidth="100"
+    android:viewportHeight="100">
+
+    <!-- Rounded Background Card -->
+    <path
+        android:pathData="M 15 5 L 85 5 A 10 10 0 0 1 95 15 L 95 85 A 10 10 0 0 1 85 95 L 15 95 A 10 10 0 0 1 5 85 L 5 15 A 10 10 0 0 1 15 5 Z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:type="linear"
+                android:startX="5"
+                android:startY="5"
+                android:endX="95"
+                android:endY="95">
+                <item android:offset="0.0" android:color="#BA8B02" />
+                <item android:offset="1.0" android:color="#4A3401" />
+            </gradient>
+        </aapt:attr>
+    </path>
+
+    <!-- Mountains Icon in Center -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M 42,32 L 18,72 L 66,72 Z M 62,45 L 45,72 L 78,72 Z" />
+</vector>

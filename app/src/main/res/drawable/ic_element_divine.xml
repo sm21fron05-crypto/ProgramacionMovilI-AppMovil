@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="120dp"
+    android:height="120dp"
+    android:viewportWidth="100"
+    android:viewportHeight="100">
+
+    <!-- Rounded Background Card -->
+    <path
+        android:pathData="M 15 5 L 85 5 A 10 10 0 0 1 95 15 L 95 85 A 10 10 0 0 1 85 95 L 15 95 A 10 10 0 0 1 5 85 L 5 15 A 10 10 0 0 1 15 5 Z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:type="linear"
+                android:startX="5"
+                android:startY="5"
+                android:endX="95"
+                android:endY="95">
+                <item android:offset="0.0" android:color="#F2C94C" />
+                <item android:offset="1.0" android:color="#F2994A" />
+            </gradient>
+        </aapt:attr>
+    </path>
+
+    <!-- Star Burst Icon in Center -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M 50,25 L 54,40 L 69,36 L 58,47 L 72,50 L 58,53 L 69,64 L 54,60 L 50,75 L 46,60 L 31,64 L 42,53 L 28,50 L 42,47 L 31,36 L 46,40 Z" />
+</vector>
