@@ -42,15 +42,16 @@ public class MainActivity extends AppCompatActivity implements RecyclerAdapter.O
 
     @Override
     public void onItemClick(ItemModel item) {
-
         DetailFragment detailFragment = DetailFragment.newInstance(item);
-
         androidx.fragment.app.FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
 
-        transaction.replace(R.id.main, detailFragment);
+        // 1. TU PARTE: Agregar la animación personalizada ANTES del replace
+        transaction.setCustomAnimations(R.anim.fade_in, 0, 0, 0);
+
+        // 2. CORRECCIÓN: Usar el fragment_container en lugar de 'main'
+        transaction.replace(R.id.fragment_container, detailFragment);
 
         transaction.addToBackStack(null);
-
         transaction.commit();
     }
 }
